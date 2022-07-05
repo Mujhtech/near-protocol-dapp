@@ -16,6 +16,17 @@ body {
   height: 100%;
 }
 
+.account {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 0.75em;
+  font-weight: 900;
+  background-color: #ffffff69;
+  padding: 10px;
+  border-radius: 30px;
+}
+
 #score {
   position: absolute;
   top: 30px;

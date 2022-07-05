@@ -1,3 +1,5 @@
+import { postPlayer } from "./minter";
+
 // Extend the base functionality of JavaScript
 Array.prototype.last = function () {
   return this[this.length - 1];
@@ -332,9 +334,17 @@ function draw() {
   }
 }
 if (restartButton) {
-  restartButton.addEventListener("click", function (event) {
+  restartButton.addEventListener("click", async function (event) {
     event.preventDefault();
-    resetGame();
+    try {
+    await postPlayer(score);
+      resetGame();
+    } catch (e) {
+      //
+      console.log(e);
+    }
+
+    
     restartButton.style.display = "none";
   });
 }

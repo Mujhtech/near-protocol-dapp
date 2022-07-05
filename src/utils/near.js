@@ -39,9 +39,9 @@ export async function tokenTotalSupply() {
 }
 
 export async function previousScore() {
-  let score = await window.contract.getScore({"id" : window.walletConnection.getAccountId()});
-  score = score === null ? "No record" : score["value"]
-  return score;
+  let player = await window.contract.getScore({"id" : window.walletConnection.getAccountId()});
+  player = player === null ? "No record" : player["score"]
+  return player;
 }
 
 export async function getAccountId() {

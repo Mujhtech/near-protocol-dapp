@@ -5,10 +5,11 @@ import "./utils/game";
 function App() {
   const { account } = useContract();
 
-  return account.accountId == undefined || account.accountId == null ? (
+  return account.accountId === undefined || account.accountId === null ? (
     <Login />
   ) : (
     <div className="container">
+      <div className="account">{account.accountId}</div>
       <div id="score"></div>
       <canvas id="game" width="375" height="375"></canvas>
       <div id="introduction">Hold down the mouse to stretch out a stick</div>
